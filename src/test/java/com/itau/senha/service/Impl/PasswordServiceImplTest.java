@@ -43,6 +43,13 @@ class PasswordServiceImplTest {
     }
 
     @Test
+    public void blankSpace(){
+        PasswordServiceImpl service = new PasswordServiceImpl();
+        boolean valid = service.isValid("Qwerty@ 1234");
+        assertFalse(valid);
+    }
+
+    @Test
     public void validPassword(){
         PasswordServiceImpl service = new PasswordServiceImpl();
         boolean valid = service.isValid("Qwerty@1234");
