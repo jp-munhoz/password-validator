@@ -35,7 +35,10 @@ desenvolvimento de API para fazer requisições.
 - Validar senha
   - Metodo: Post
   - url: `localhost:8080/password/isValid`
-  - Body: Raw/Text
+  - Body: Raw/json
+    - `{
+      "password":"senha para validar"
+      }`
 
 ### Referências utilizadas
 - https://www.passay.org/

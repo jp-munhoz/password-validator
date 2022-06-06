@@ -1,5 +1,6 @@
 package com.itau.senha.controler;
 
+import com.itau.senha.model.Password;
 import com.itau.senha.service.Impl.PasswordServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +15,8 @@ public class PasswordController {
     PasswordServiceImpl service;
 
     @PostMapping("/isValid")
-    public ResponseEntity<Boolean> isValid(@RequestBody String password){
-        boolean pw = service.isValid(password);
+    public ResponseEntity<Boolean> isValid(@RequestBody Password password){
+        boolean pw = service.isValid(password.getPassword());
 
         System.out.println("PasswordController.isValid: Validando senha do usuário. . .");
 
