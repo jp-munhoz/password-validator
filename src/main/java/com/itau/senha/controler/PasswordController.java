@@ -17,9 +17,13 @@ public class PasswordController {
     public ResponseEntity<Boolean> isValid(@RequestBody String password){
         boolean pw = service.isValid(password);
 
+        System.out.println("PasswordController.isValid: Validando senha do usuário. . .");
+
         if (pw){
+            System.out.println("PasswordController.isValid: Senha atende todos os critérios");
             return ResponseEntity.accepted().body(true);
         } else {
+            System.out.println("PasswordController.isValid: Senha não atende todos os critérios");
             return ResponseEntity.badRequest().body(false);
         }
     }
